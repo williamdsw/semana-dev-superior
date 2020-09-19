@@ -1,4 +1,4 @@
-package com.williamdsw.dspesquisa;
+package com.williamdsw.dspesquisa.services;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,5 +22,6 @@ public class GameService {
 		List<Game> games = gameRepository.findAll();
 		return games.stream().map(game -> new GameDTO(game)).collect(Collectors.toList());
 	}
+
 
 }

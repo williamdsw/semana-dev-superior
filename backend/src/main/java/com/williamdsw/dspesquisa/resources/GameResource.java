@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.williamdsw.dspesquisa.GameService;
 import com.williamdsw.dspesquisa.dto.GameDTO;
+import com.williamdsw.dspesquisa.services.GameService;
 
 @RestController @RequestMapping (value = "/games")
 public class GameResource {
