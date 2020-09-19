@@ -15,8 +15,7 @@ import javax.persistence.Table;
 
 import com.williamdsw.dspesquisa.entities.enums.Platform;
 
-@Entity
-@Table(name = "tb_game")
+@Entity @Table(name = "tb_game")
 public class Game implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -26,8 +25,7 @@ public class Game implements Serializable {
 	private String title;
 	private Platform platform;
 
-	@ManyToOne
-	@JoinColumn(name = "genre_id")
+	@ManyToOne @JoinColumn(name = "genre_id")
 	private Genre genre;
 
 	@OneToMany(mappedBy = "game")
@@ -102,7 +100,7 @@ public class Game implements Serializable {
 		return true;
 	}
 
-	public List<Record> getRecods() {
+	public List<Record> getRecords() {
 		return records;
 	}
 
