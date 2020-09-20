@@ -1,42 +1,45 @@
 import React from 'react';
 import { Alert, Image, StyleSheet, Text, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 import { FontAwesome5 as Icon } from '@expo/vector-icons';
 
+import Header from '../../components/Header';
+
 const Home = () => {
 
+    const navigation = useNavigation();
+
     const handleOnPress = () => {
-        Alert.alert ('você clicou no botão!');
+        // Alert.alert ('você clicou no botão!');
+        navigation.navigate('CreateRecord');
     };
 
     return (
         <>
-            <View style={styles.global}>
-                <View style={styles.container}>
-                    <Image source={require('../../assets/gamer.png')} style={styles.gamerImage} />
-                    <Text style={styles.title}> Vote agora! </Text>
-                    <Text style={styles.subTitle}> Nos diga qual o é o seu jogo favorito! </Text>
-                </View>
-                <View style={styles.footer}>
-                    <RectButton style={styles.button} onPress={handleOnPress}>
-                        <Text style={styles.buttonText}> COLETAR DADOS </Text>
-                        <View style={styles.buttonIcon}>
-                            <Text>
-                                <Icon name="chevron-right" color="#FFF" size={25} />
-                            </Text>
-                        </View>
-                    </RectButton>
-                </View>
+            <Header/>
+            <View style={styles.container}>
+                <Image source={require('../../assets/gamer.png')} style={styles.gamerImage} />
+                <Text style={styles.title}> Vote agora! </Text>
+                <Text style={styles.subTitle}> Nos diga qual o é o seu jogo favorito! </Text>
+            </View>
+            <View style={styles.footer}>
+                <RectButton style={styles.button} onPress={handleOnPress}>
+                    <Text style={styles.buttonText}> COLETAR DADOS </Text>
+                    <View style={styles.buttonIcon}>
+                        <Text>
+                            <Icon name="chevron-right" color="#FFF" size={25} />
+                        </Text>
+                    </View>
+                </RectButton>
             </View>
         </>
     )
 };
 
 const styles = StyleSheet.create({
-    global: {
-        backgroundColor: '#0B1F34',
-    },
     container: {
+        backgroundColor: '#0B1F34',
         marginTop: '15%',
         alignItems: 'center',
     },
