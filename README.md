@@ -2,4 +2,4 @@
 
 Project based on this video: https://www.youtube.com/watch?v=PfYifUFmXk8
 
-Live at semana-dev-superior-will.netlify.app/ 
+Live at https://semana-dev-superior-will.netlify.app/
